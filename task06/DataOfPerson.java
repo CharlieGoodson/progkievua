@@ -78,7 +78,7 @@ public class DataOfPerson {
                     } else if (field.getType() == double.class) {
                         fieldsString += field.getDouble(this) + ";";
                     } else {
-                        fieldsString += (String) field.get(this) + ";";
+                        fieldsString += field.get(this) + ";";
                     }
                 }
             }
