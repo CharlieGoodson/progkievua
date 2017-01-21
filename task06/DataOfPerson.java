@@ -83,14 +83,13 @@ public class DataOfPerson {
                     }
                 }
             }
-
-            FileWriter writer = new FileWriter(filePath);
-            try {
-                writer.write(fieldsString);
-            } finally {
-                writer.close();
-            }
         } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+        try (FileWriter writer = new FileWriter(filePath)) {
+            writer.write(fieldsString);
+        } catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -121,6 +120,7 @@ public class DataOfPerson {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                return null;
             }
         }
         return res;
